@@ -1,0 +1,134 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Mountains of Christmas', serif;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: linear-gradient(#6e0008, #cf0000);
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.container::before {
+	content: '';
+	position: absolute;
+	bottom: -7px;
+	width: 100%;
+	height: 235px;
+	background: url('./img/tree.png');
+	z-index: 1;
+	background-position: center;
+}
+
+.circle {
+	position: absolute;
+	top: 7%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 160px;
+	height: 160px;
+	background: #fff;
+	border-radius: 50%;
+}
+
+.container .circle::before {
+	content: '';
+	position: absolute;
+	inset: -100px -200px;
+	background: url('./img/santa.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 200px;
+	animation: animate 5s ease-in-out infinite;
+}
+
+@keyframes animate {
+	0%,
+	100% {
+		transform: translateY(-25px);
+	}
+	50% {
+		transform: translateY(25px);
+	}
+}
+
+.container .circle::after {
+	content: 'Wesołych Świąt Życzy Angelika Mikołaj i Grzegorz';
+	position: absolute;
+	top: 180px;
+	font-size: 1.4em;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	text-align: center;
+	color: #fff;
+}
+
+.container .snow {
+	position: relative;
+	display: flex;
+}
+
+.container .snow span {
+	position: relative;
+	min-width: 3px;
+	height: 3px;
+	background: #fff;
+	border-radius: 50%;
+	margin: 0 1vw;
+	box-shadow: -100px 20px 5px #fff, 100px 20px 10px #fff;
+	animation: snow 15s linear infinite;
+	animation-duration: calc(150s / var(--i));
+}
+
+.container .snow span:nth-child(even) {
+	min-width: 7px;
+	height: 7px;
+}
+
+@keyframes snow {
+	0% {
+		transform: translateY(-80vh);
+	}
+	100% {
+		transform: translateY(100vh);
+	}
+}
+
+@media (min-width: 321px) and (max-width: 380px) {
+	.container::before {
+		content: '';
+		bottom: 0;
+		height: 250px;
+	}
+	.circle {
+		top: 10%;
+	}
+	.container .circle::after {
+		top: 250px;
+		font-size: 1.4rem;
+	}
+}
+
+@media (min-width: 381px)  {
+    .circle {
+		top: 15%;
+	}
+    .container .circle::after {
+		top: 250px;
+		font-size: 1.7rem;
+	}
+}
