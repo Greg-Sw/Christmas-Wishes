@@ -108,7 +108,7 @@ body {
 	}
 }
 
-@media (min-width: 321px) and (max-width: 380px) {
+/* @media (min-width: 321px) and (max-width: 380px) {
 	.container::before {
 		content: '';
 		bottom: 0;
@@ -123,12 +123,12 @@ body {
 	}
 }
 
-@media (min-width: 381px)  {
-    .circle {
+@media (min-width: 381px) {
+	.circle {
 		top: 15%;
 	}
-    .container .circle::after {
+	.container .circle::after {
 		top: 250px;
 		font-size: 1.7rem;
 	}
-}
+} */
